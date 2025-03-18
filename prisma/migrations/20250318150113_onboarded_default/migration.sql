@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "users" ALTER COLUMN "isOnboarded" SET DEFAULT false,
+ALTER COLUMN "age" DROP NOT NULL,
+ALTER COLUMN "workplace" DROP NOT NULL,
+ALTER COLUMN "speciality" DROP NOT NULL;
