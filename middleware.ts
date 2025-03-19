@@ -7,7 +7,8 @@ import { Routes } from "./routes/Routes";
 export async function middleware(request: NextRequest) {
   const token = await getToken({ 
     req: request, 
-    secret: process.env.NEXTAUTH_SECRET 
+    secret: process.env.NEXTAUTH_SECRET,
+    cookieName: "__Secure-authjs.session-token", 
   });
   // Allow access to the root path (/) without authentication
   console.log(token)
