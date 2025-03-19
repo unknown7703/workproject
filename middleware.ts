@@ -10,7 +10,7 @@ export async function middleware(request: NextRequest) {
     secret: process.env.NEXTAUTH_SECRET 
   });
   // Allow access to the root path (/) without authentication
-  
+  console.log(token)
   // If user is authenticated but not onboarded, redirect to onboarding
   if (token && !token.isOnboarded && !request.nextUrl.pathname.startsWith('/onboarding')) {
     return NextResponse.redirect(new URL(Routes.onboarding, request.url));
