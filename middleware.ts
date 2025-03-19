@@ -11,6 +11,12 @@ export async function middleware(request: NextRequest) {
   });
   // Allow access to the root path (/) without authentication
   console.log(token)
+  if (request.nextUrl.pathname === "/debug-token") {
+    return new NextResponse(JSON.stringify({ token }, null, 2), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
   // If user is authenticated but not onboarded, redirect to onboarding
   if (token && !token.isOnboarded && !request.nextUrl.pathname.startsWith('/onboarding')) {
     return NextResponse.redirect(new URL(Routes.onboarding, request.url));
