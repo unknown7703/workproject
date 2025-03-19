@@ -7,7 +7,7 @@ import Link from "next/link";
 import { ArrowRight, Info } from "lucide-react";
 import { useSession } from "next-auth/react";
 import AuthBar from "../auth/AuthBar";
-
+import MainNavbar from "../shared/Navbar";
 export default function Hero() {
   const { data: session } = useSession();
   return (
@@ -30,42 +30,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <nav className="hidden md:block">
-          <div className="bg-[#1a1b20]/30 backdrop-blur-md rounded-full px-4 py-2">
-            <ul className="flex space-x-6">
-              <li>
-                <Link href="#home" className="text-white text-sm font-light">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#features"
-                  className="text-gray-400 text-sm font-light hover:text-white transition-colors"
-                >
-                  Features
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#benefits"
-                  className="text-gray-400 text-sm font-light hover:text-white transition-colors"
-                >
-                  Benefits
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="#contact"
-                  className="text-gray-400 text-sm font-light hover:text-white transition-colors"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        <MainNavbar/>
         {/* <div>
           <Link
             href="/sign-up"

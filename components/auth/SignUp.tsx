@@ -41,10 +41,10 @@ export default function SignUpForm({
     try {
       const response = await createUser(values);
       if (response.success) {
-        toast.success("Your account has been created successfully.");
+        toast.success("Account Created ! Please Log In");
         router.push("/sign-in");
       } else {
-        toast.error(response.error || "There was an error creating your account.");
+        toast.error( "There was an error creating your account.");
       }
     } catch (error) {
       console.error("Sign up error:", error);

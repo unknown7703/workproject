@@ -34,19 +34,20 @@ export function LoginForm({
   ...props
 }: React.ComponentProps<"div">) {
   const { data: session } = useSession();
-  const [isLoading, setLoading] = useState(false);
   const credentialsAction = async (formData: FormData) => {
-    setLoading(true);
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
 
-    await signIn("credentials", {
+    const response = await signIn("credentials", {
       email,
       password,
       redirect: false,
     });
-    toast("You have been logged in successfully");
-    setLoading(false);
+    if(response?.status === 200){
+      toast("You have logged in successfully")
+    }else{
+      toast("Error logging in")
+    }
     redirect("/");
   };
 
@@ -132,7 +133,7 @@ export function LoginForm({
               <div className="text-center text-sm">
                 Don&apos;t have an account?{" "}
                 <Link
-                  href={"/sign-up"}
+                  href={"/auth/sign-up"}
                   className="underline underline-offset-4"
                 >
                   Sign up
