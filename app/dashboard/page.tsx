@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import {
   User,
@@ -34,7 +33,6 @@ import Link from "next/link";
 
 export default function DashboardPage() {
   const { data: session, update } = useSession();
-  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
 

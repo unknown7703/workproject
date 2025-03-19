@@ -6,10 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
-import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 import { toast } from "sonner";
-import { useState } from "react";
 import { LoaderCircle } from 'lucide-react';
 import { useFormStatus } from 'react-dom';
 function SubmitButton() {
@@ -33,7 +31,6 @@ export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  const { data: session } = useSession();
   const credentialsAction = async (formData: FormData) => {
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;

@@ -10,7 +10,7 @@ import { createUser } from "@/actions/createUser"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { ArrowLeft, LoaderCircle } from "lucide-react"
+import { LoaderCircle } from "lucide-react"
 import { useRouter } from "next/navigation";
 import { useState } from "react"
 

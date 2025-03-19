@@ -5,11 +5,10 @@ import Image from "next/image";
 import { Stethoscope } from "lucide-react";
 import Link from "next/link";
 import { ArrowRight, Info } from "lucide-react";
-import { useSession } from "next-auth/react";
 import AuthBar from "../auth/AuthBar";
 import MainNavbar from "../shared/Navbar";
 export default function Hero() {
-  const { data: session } = useSession();
+  
   return (
     <div className="min-h-screen bg-[#000e0f] text-white overflow-hidden relative">
       {/* Navigation */}
