@@ -5,7 +5,6 @@ import { Routes } from "@/routes/Routes";
 import { UserProfile } from "../shared/UserProfile";
 export default function AuthBar() {
   const session = useSession();
-    console.log(session.status)
   return (
     <div>
       {session?.status=="authenticated"? (

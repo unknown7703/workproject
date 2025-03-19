@@ -56,8 +56,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       // Initial sign in
       if (user) {
         token.id = user.id;
-        
-        // Get user from database to check onboarding status
         const dbUser = await prisma.user.findUnique({
           where: { id: user.id },
         });
